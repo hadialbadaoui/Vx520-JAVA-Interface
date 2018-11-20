@@ -17,6 +17,11 @@ Easy steps to rich the Vx520-JAVA-Interface:
 - A new folder named "dist" appear, in this folder we have the Executable Jar File (.jar) named "Vx520"
 - Double click on it to run.
 
+# Note: You can download all missing library from this link: https://github.com/hadialbadaoui/Credit-Card-Terminals.git
+- jssc-2.8.0.jar
+- org.json.jar
+- Credit_Card_Terminals.jar
+
 How Vx520-JAVA-Interface work?
 - You should choose the right com name and put it in the COM Name.
 - Click the button "Test Connection" to check the connection with Vx520 POS Terminal.
