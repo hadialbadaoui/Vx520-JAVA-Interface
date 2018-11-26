@@ -5,7 +5,6 @@
  */
 package Main;
 
-import Main.AreebaPOS;
 import ManageResponse.Manage;
 import Response.Settlement;
 import Response.Status;
@@ -359,16 +358,29 @@ public class Vx520 extends javax.swing.JFrame{
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTextArea1.setText("");
         Manage MR = new Manage();
-        AreebaPOS apos = new AreebaPOS(COM.getText());
-        MR = apos.SendTestToPOS();
+        AreebaPOS apos;
         String message = "";
-        if(MR.status)
+        if(COM.getText().equals(""))
         {
-            Status s = new Status(MR.ReturnStatusOut());
-            message += "Status Log = "+s.ShowStatus();
+            apos = new AreebaPOS();
+            String comresult = apos.SearchingPort();
+            if(comresult.equals("Error"))
+                message += "POS not connected to USBHub";
+            else
+                COM.setText(comresult);
         }
         else
-            message += MR.errormessage;
+        {
+            apos = new AreebaPOS(COM.getText());
+            MR = apos.SendTestToPOS();
+            if(MR.status)
+            {
+                Status s = new Status(MR.ReturnStatusOut());
+                message += "Status Log = "+s.ShowStatus();
+            }
+            else
+                message += MR.errormessage;
+        }
         jTextArea1.setText(message);
     }//GEN-LAST:event_jButton1ActionPerformed
 
