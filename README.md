@@ -23,7 +23,7 @@ Easy steps to rich the Vx520-JAVA-Interface:
 - Credit_Card_Terminals.jar
 
 How Vx520-JAVA-Interface work?
-- You should choose the right com name and put it in the COM Name.
+- You can choose the right com name and put it in the COM Name or you can just put the COM Name empty(The program will fill it).
 - Click the button "Test Connection" to check the connection with Vx520 POS Terminal.
 - Parameter 1: The reference should be 8 digits.
 - Parameter 2: The amount should be 12 digits.
